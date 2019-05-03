@@ -6,7 +6,11 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    private static void main(String[]args) {
+        run();
+    }
+
+    public static void run() {
         // Person temp vars
         String tempName;
         String tempEmail;
@@ -143,9 +147,7 @@ public class Main {
             System.out.println(users);
 
             if (newUser.equalsIgnoreCase("Y")) {
-
-                main();
-
+                run();
 
             } else {
                 switchU = false;
@@ -154,9 +156,6 @@ public class Main {
 
         }
 
-    }
-
-    private static void main() {
     }
 }
 
