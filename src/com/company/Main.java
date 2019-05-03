@@ -1,13 +1,12 @@
 package com.company;
 
+import javax.xml.bind.SchemaOutputResolver;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        //Declaring all my vars
-
-
         // Person temp vars
         String tempName;
         String tempEmail;
@@ -19,7 +18,6 @@ public class Main {
         String tempGraduationYear;
 
         //Job temp vars
-
         String tempCompany;
         String tempJobTitle;
         String tempStartDate;
@@ -28,7 +26,6 @@ public class Main {
 
 
         //Skills Vars
-
         String tempSkillOne;
         String tempLevelSkillOne;
         String tempSkillTwo;
@@ -37,10 +34,17 @@ public class Main {
         String tempLevelSkillThree;
 
 
-        // TODO: Will have to make some type of loop to support multiple users.
+        //Loop vars
+        String newUser;
+        boolean switchU = true;
+
+        //ArrayList of Users
+        ArrayList<Person> users = new ArrayList<Person>();
 
         // Start of person var user input
         Scanner keyboard = new Scanner(System.in);
+
+
         System.out.println("Hello, What is your name?");
         tempName = keyboard.nextLine();
         System.out.println("What is your email?");
@@ -55,17 +59,6 @@ public class Main {
         tempUniversityName = keyboard.nextLine();
         System.out.println("What year did you graduate?");
         tempGraduationYear = keyboard.nextLine();
-
-
-        /*
-        TODO: Fix the User var below to make the program dynamic
-
-        Making holder variables - userName  + Education or username + Job
-
-        THESE ARE THE VARS THAT YOU SHOULD USE TO NAME AN INSTANCE
-         */
-        ///String UserEducation = tempName + " Education";
-
 
         /*
         Making the instance of the education and calling it after that person  + education
@@ -114,25 +107,27 @@ public class Main {
 
         //END OF SKILLS
 
-
-
-
-
-
-
-
-
-
-
-
         /*
         Now making an instance of a person
          */
 
         Person tempname = new Person(tempName,tempEmail,u1,j1,s1);
+       //Adding the user to the arraylist for users
+        users.add(tempname);
 
-
+        //The function below displays the resume for the current user.
         tempname.printPersonInfo();
+
+        System.out.println("Would you like to add another user (Y/N)?");
+        newUser = keyboard.nextLine();
+
+//        if(newUser.equalsIgnoreCase("Y")){
+//            System.out.println("This will create a new user");
+//        }
+//
+//        else{
+//            switchU = false;
+//        }
 
 
 
