@@ -27,6 +27,16 @@ public class Main {
         String tempJobDescription;
 
 
+        //Skills Vars
+
+        String tempSkillOne;
+        String tempLevelSkillOne;
+        String tempSkillTwo;
+        String tempLevelSkillTwo;
+        String tempSkillthree;
+        String tempLevelSkillThree;
+
+
         // TODO: Will have to make some type of loop to support multiple users.
 
         // Start of person var user input
@@ -80,6 +90,33 @@ public class Main {
         //Making an instance of JOB with user Input
         Job j1 = new Job(tempCompany,tempJobTitle,tempStartDate,tempEndDate,tempJobDescription);
 
+        // JOB SECTION IS DONE
+
+        //Start of the skills section
+
+        System.out.println("Let's add some skills to your resume");
+        System.out.println("What is the your first skill? (this could be something like python)");
+        tempSkillOne = keyboard.nextLine();
+        System.out.println("Proficiency level(Fundamental, Novice, Intermediate, Advanced)");
+        tempLevelSkillOne = keyboard.nextLine();
+        System.out.println("What is the name of your second skill:");
+        tempSkillTwo = keyboard.nextLine();
+        System.out.println("Proficiency level:(Fundamental, Novice, Intermediate, Advanced");
+        tempLevelSkillTwo = keyboard.nextLine();
+        System.out.println("What is the name of your third skill:");
+        tempSkillthree = keyboard.nextLine();
+        System.out.println("Proficiency level:(Fundamental, Novice, Intermediate, Advanced");
+        tempLevelSkillThree = keyboard.nextLine();
+        System.out.println("WE ARE DONE!");
+
+        // Making an instance of Skills
+        Skill s1 = new Skill(tempSkillOne,tempLevelSkillOne,tempSkillTwo,tempLevelSkillTwo,tempSkillthree,tempLevelSkillThree);
+
+        //END OF SKILLS
+
+
+
+
 
 
 
@@ -92,9 +129,12 @@ public class Main {
         Now making an instance of a person
          */
 
-        Person tempname = new Person(tempName,tempEmail,u1,j1);
+        Person tempname = new Person(tempName,tempEmail,u1,j1,s1);
+
 
         tempname.printPersonInfo();
+
+
 
     }
 }

@@ -4,8 +4,6 @@ public class Person {
     private String Name;
     private String Email;
     private Education education;
-
-    //Need to add getters and setters and constructors
     private  Job job;
     private Skill skill;
 
@@ -13,14 +11,24 @@ public class Person {
     public Person() {
     }
 
-    public Person(String name, String email, Education education, Job job) {
+    public Person(String name, String email, Education education, Job job, Skill skill) {
         Name = name;
         Email = email;
         this.education = education;
         this.job = job;
+        this.skill = skill;
     }
 
     //GETTERS and SETTERS
+
+    public Skill getSkill() {
+        return skill;
+    }
+
+    public void setSkill(Skill skill) {
+        this.skill = skill;
+    }
+
     public Job getJob() {
         return job;
     }
@@ -59,9 +67,11 @@ public class Person {
         System.out.println("-------------------------");
         System.out.println(getName());
         System.out.println(getEmail());
-        System.out.println();
+        //System.out.println();
         education.printMyEducation();
         job.printMyjob();
+        skill.printMySkills();
+        System.out.println("-------------------------");
 
 
     }

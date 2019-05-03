@@ -59,7 +59,7 @@ public class Job {
     }
 
     public void printMyjob(){
-        System.out.println();
+
         System.out.println("Experience:");
         System.out.println(getJobTitle());
         System.out.println(getCompany()+ ", "+ getStartDate()+"-"+ getEndDate());
