@@ -18,19 +18,16 @@ public class Main {
         String tempUniversityName;
         String tempGraduationYear;
 
+        //Job temp vars
+
+        String tempCompany;
+        String tempJobTitle;
+        String tempStartDate;
+        String tempEndDate;
+        String tempJobDescription;
 
 
-        /*
-
-        Making holder variables - userName  + Education or username + Job
-
-        THESE ARE THE VARS THAT YOU SHOULD USE TO NAME AN INSTANCE
-         */
-
-
-
-
-        //Will have to make some type of loop to support multiple users.
+        // TODO: Will have to make some type of loop to support multiple users.
 
         // Start of person var user input
         Scanner keyboard = new Scanner(System.in);
@@ -49,7 +46,15 @@ public class Main {
         System.out.println("What year did you graduate?");
         tempGraduationYear = keyboard.nextLine();
 
-        String UserEducation = tempName + " Education";
+
+        /*
+        TODO: Fix the User var below to make the program dynamic
+
+        Making holder variables - userName  + Education or username + Job
+
+        THESE ARE THE VARS THAT YOU SHOULD USE TO NAME AN INSTANCE
+         */
+        ///String UserEducation = tempName + " Education";
 
 
         /*
@@ -57,11 +62,37 @@ public class Main {
          */
         Education u1 = new Education(tempDegreeType,tempMajor,tempUniversityName,tempGraduationYear);
 
+        // EDUCATION IS DONE
+
+        //Start of the job section
+        System.out.println("Thank you! Let's start working on your experience ");
+        System.out.println("Please enter the name of your most recent employer:");
+        tempCompany = keyboard.nextLine();
+        System.out.println("Nice! What was your job title?");
+        tempJobTitle =keyboard.nextLine();
+        System.out.println("Please enter your Start date (Month,Year)");
+        tempStartDate = keyboard.nextLine();
+        System.out.println("Please enter your end date (Month,Year)");
+        tempEndDate = keyboard.nextLine();
+        System.out.println("Please enter a description of your role");
+        tempJobDescription = keyboard.nextLine();
+
+        //Making an instance of JOB with user Input
+        Job j1 = new Job(tempCompany,tempJobTitle,tempStartDate,tempEndDate,tempJobDescription);
+
+
+
+
+
+
+
+
+
         /*
         Now making an instance of a person
          */
 
-        Person tempname = new Person(tempName,tempEmail,u1);
+        Person tempname = new Person(tempName,tempEmail,u1,j1);
 
         tempname.printPersonInfo();
 
