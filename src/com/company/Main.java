@@ -118,8 +118,8 @@ public class Main {
         //The function below displays the resume for the current user.
         tempname.printPersonInfo();
 
-        System.out.println("Would you like to add another user (Y/N)?");
-        newUser = keyboard.nextLine();
+        //System.out.println("Would you like to add another user (Y/N)?");
+        //newUser = keyboard.nextLine();
 
 //        if(newUser.equalsIgnoreCase("Y")){
 //            System.out.println("This will create a new user");
