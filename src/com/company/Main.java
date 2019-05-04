@@ -7,10 +7,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[]args){
-        run();
-    }
 
-    public static void run() {
         // Person temp vars
         String tempName;
         String tempEmail;
@@ -50,16 +47,12 @@ public class Main {
 
         //TODO:: Need to make a loop. To add multiple users.
 
-        System.out.println("Enter R for a new resume");
-        System.out.println("Enter E to exit");
-        System.out.println("Enter U to add a new user with a new resume");
+        System.out.println("Enter Y for a new resume");
+
         newUser = keyboard.nextLine();
 
-        if (newUser.equalsIgnoreCase("r")) {
+        if (newUser.equalsIgnoreCase("Y")) {
             switchU = true;
-        }
-        if (newUser.equalsIgnoreCase("e")) {
-            switchU = false;
         }
 
 
@@ -142,14 +135,16 @@ public class Main {
             System.out.println(users);
 
             System.out.println("Would you like to add another user (Y/N)?");
+
             newUser = keyboard.nextLine();
 
-            System.out.println(users);
+
 
             if (newUser.equalsIgnoreCase("Y")) {
-                run();
 
-            } else {
+
+            }
+            else {
                 switchU = false;
             }
 
@@ -158,4 +153,3 @@ public class Main {
 
     }
 }
-
