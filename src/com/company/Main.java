@@ -240,17 +240,19 @@ public class Main {
             }
             System.out.println("WE ARE DONE!");
             //The function below displays the resume for the current user.
-            System.out.println();
-            System.out.println("-------------------------");
-            System.out.println(tempname.getName());
-            System.out.println(tempname.getEmail());
-            System.out.println(tempname.getEmail());
-            System.out.println(tempname.getEducation());
-            System.out.println(tempname.getJob());
 
-
-
-            System.out.println("-------------------------");
+            tempname.printPersonInfo();
+//            System.out.println();
+//            System.out.println("-------------------------");
+//            System.out.println(tempname.getName());
+//            System.out.println(tempname.getEmail());
+//            System.out.println(tempname.getPhoneNumber());
+//            tempname.getEducation().printMyEducation();
+//            tempname.getEducation2().printMyEducation();
+//
+//
+//
+//            System.out.println("-------------------------");
             users.add(tempname);
             System.out.println("Would you like to add another user?");
             ansholder = keyboard.nextLine();

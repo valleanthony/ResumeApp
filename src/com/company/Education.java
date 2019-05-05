@@ -51,10 +51,10 @@ public class Education {
 
     public void printMyEducation(){
         System.out.println();
-        System.out.println("Education: ");
         System.out.println(getDegreeType() +  " in " + getMajor()+",");
         System.out.println(getUniversityName()+", "+ getGraduationYear());
         System.out.println();
+
     }
 
 

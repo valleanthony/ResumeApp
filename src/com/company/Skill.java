@@ -83,8 +83,21 @@ public class Skill {
         System.out.println();
         System.out.println("Skills:");
         System.out.println(getLevelSkillOne()+ " in "+ getSkillOne());
-        System.out.println(getLevelSkillTwo()+ " in "+ getSkillTwo());
-        System.out.println(getLevelSkillThree()+ " in "+ getSkillthree());
+        if (skillTwo == null){
+
+        }
+        else{
+            System.out.println(getLevelSkillTwo()+ " in "+ getSkillTwo());
+        }
+
+        if(skillthree== null){
+
+        }
+
+        else{
+            System.out.println(getLevelSkillThree()+ " in "+ getSkillthree());
+        }
+
 
 
 

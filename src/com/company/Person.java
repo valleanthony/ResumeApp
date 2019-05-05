@@ -1,5 +1,7 @@
 package com.company;
 
+
+
 public class Person {
     private String Name;
     private String Email;
@@ -102,6 +104,7 @@ public class Person {
     }
 
 
+
     public void printPersonInfo(){
         // TODO: this needs to be fixed
         System.out.println();
@@ -109,9 +112,63 @@ public class Person {
         System.out.println(getName());
         System.out.println(getEmail());
         System.out.println(getPhoneNumber());
-        //System.out.println();
+        printeducation();
+        printwork();
+        printSkills();
+        System.out.println("-------------------------");
 
 
+
+
+    }
+
+    public void printeducation(){
+        System.out.println("Education:");
+        if(education == null){
+            System.out.println();
+        }
+        else{
+            education.printMyEducation();
+        }
+
+        if (education2 == null){
+            System.out.println();
+        }
+        else{
+            education2.printMyEducation();
+        }
+
+
+    }
+
+
+    public void printwork() {
+        if (job == null) {
+
+        } else {
+            job.printMyjob();
+        }
+        if (Job2 == null) {
+
+        } else {
+            Job2.printMyjob();
+        }
+        }
+
+     public void printSkills(){
+        System.out.println("Skills:");
+         if (skill== null){
+
+         }
+         else {
+             //TODO: Display skills from skills Class
+             skill.printMySkills();
+         }
+
+
+
+
+        }
 
     }
 
@@ -119,4 +176,3 @@ public class Person {
 
 
 
-}
