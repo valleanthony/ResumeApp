@@ -1,6 +1,5 @@
 package com.company;
 
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -63,15 +62,23 @@ public class Main {
 
 
         while (switchU == true) { //This is the main loop that controls everything.
+            Person tempname = new Person(); //Making an instance of a person
 
             System.out.println("Hello, What is your name?");
             tempName = keyboard.nextLine();
+            tempname.setName(tempName);
+
             System.out.println("What is your email?");
             tempEmail = keyboard.nextLine();
-            Person tempname = new Person();
+            tempname.setEmail(tempEmail);
+
+            System.out.println("Enter your phone Number:");
+            tempPhoneNumber= keyboard.nextLine();
+            tempname.setPhoneNumber(tempPhoneNumber);
 
             /*
             EDUCATION SECTION::
+
              */
             System.out.println("Would you like to enter an education section?(Y/N)");
             ansholder = keyboard.nextLine();
@@ -90,23 +97,29 @@ public class Main {
                 tempUniversityName = keyboard.nextLine();
                 System.out.println("What year did you graduate?");
                 tempGraduationYear = keyboard.nextLine();
-
-                 /*
-                Making the instance of the education and calling it after that person  + education
-                */
-                Education u1 = new Education(tempDegreeType, tempMajor, tempUniversityName, tempGraduationYear);
-                tempname.setEducation(u1); //Setting the education for the person
-
+               //making the instance of the education and calling it after that person  + education
+                Education e1 = new Education(tempDegreeType, tempMajor, tempUniversityName, tempGraduationYear);
+                tempname.setEducation(e1); //Setting the education for the person
 
                 System.out.println("Would you like to add another education section (Y/N)?");
                 ansholder = keyboard.nextLine();
                 if (ansholder.equalsIgnoreCase("Y")) {
+                    System.out.println("What is the the type of degree (BA/MS/PHD)?");
+                    tempDegreeType = keyboard.nextLine();
+                    System.out.println("What was your major?");
+                    tempMajor = keyboard.nextLine();
+                    System.out.println("what was the name of the university?");
+                    tempUniversityName = keyboard.nextLine();
+                    System.out.println("What year did you graduate?");
+                    tempGraduationYear = keyboard.nextLine();
+                    Education e2 = new Education(tempDegreeType, tempMajor, tempUniversityName, tempGraduationYear);
+                    tempname.setEducation2(e2); //Setting the education for the person
+                    edSwitch = false;
 
                 }
                 else{
                     edSwitch = false;
                 }
-
 
             }
             /*
@@ -115,7 +128,7 @@ public class Main {
 
 
              /*
-            JOB SECTION::
+            JOB SECTION:: You can have up to two jobs or no jobs
              */
             System.out.println("Would you like to add a Job to your resume (Y/N)?");
             ansholder = keyboard.nextLine();
@@ -137,15 +150,37 @@ public class Main {
                 tempEndDate = keyboard.nextLine();
                 System.out.println("Please enter a description of your role");
                 tempJobDescription = keyboard.nextLine();
-
                 //Making an instance of JOB with user Input
                 Job j1 = new Job(tempCompany, tempJobTitle, tempStartDate, tempEndDate, tempJobDescription);
-                // JOB SECTION IS DONE
                 tempname.setJob(j1); // Adding any jobs to the person
+                // JOB SECTION IS DONE
+                System.out.println("Would you like to add another Job section (Y/N)?");
+                ansholder = keyboard.nextLine();
+                if (ansholder.equalsIgnoreCase("Y")) {
+                    System.out.println("Please enter the name of your most recent employer:");
+                    tempCompany = keyboard.nextLine();
+                    System.out.println("What was your job title?");
+                    tempJobTitle = keyboard.nextLine();
+                    System.out.println("Please enter your Start date (Month,Year)");
+                    tempStartDate = keyboard.nextLine();
+                    System.out.println("Please enter your end date (Month,Year)");
+                    tempEndDate = keyboard.nextLine();
+                    System.out.println("Please enter a description of your role");
+                    tempJobDescription = keyboard.nextLine();
+                    //Making an instance of JOB with user Input
+                    Job j2 = new Job(tempCompany, tempJobTitle, tempStartDate, tempEndDate, tempJobDescription);
+                    tempname.setJob2(j2); // Adding any jobs to the person
+                    jobSwitch=false;
+                    // JOB SECTION IS DONE
+                }
+                else{
+                    jobSwitch = false;
+                }
+
             }
 
-
             System.out.println("Let's add some skills to your resume");
+            System.out.println("you can add up to three skills");
             System.out.println("Would you like to add some skills to your resume (Y/N)?");
             ansholder = keyboard.nextLine();
 
@@ -155,48 +190,80 @@ public class Main {
 
             while (skillSwitch == true) {
                 //Start of the skills section
+                //making an instance and then setting skills as the user decides to add them
+                Skill sk = new Skill();
 
 
                 System.out.println("What is the your first skill? (this could be something like python)");
                 tempSkillOne = keyboard.nextLine();
+                sk.setSkillOne(tempSkillOne); //setting skill one name
                 System.out.println("Proficiency level(Fundamental, Novice, Intermediate, Advanced)");
                 tempLevelSkillOne = keyboard.nextLine();
-                System.out.println("What is the name of your second skill:");
-                tempSkillTwo = keyboard.nextLine();
-                System.out.println("Proficiency level:(Fundamental, Novice, Intermediate, Advanced");
-                tempLevelSkillTwo = keyboard.nextLine();
-                System.out.println("What is the name of your third skill:");
-                tempSkillthree = keyboard.nextLine();
-                System.out.println("Proficiency level:(Fundamental, Novice, Intermediate, Advanced");
-                tempLevelSkillThree = keyboard.nextLine();
-                System.out.println("WE ARE DONE!");
+                sk.setLevelSkillOne(tempLevelSkillOne);
 
-                // Making an instance of Skills
-                Skill s1 = new Skill(tempSkillOne, tempLevelSkillOne, tempSkillTwo, tempLevelSkillTwo, tempSkillthree, tempLevelSkillThree);
+                System.out.println("Add another skill? (Y/N)");
+                ansholder = keyboard.nextLine();
+                if (ansholder.equalsIgnoreCase("Y")) {
+                    System.out.println("What is the name of your second skill:");
+                    tempSkillTwo = keyboard.nextLine();
+                    sk.setSkillTwo(tempSkillTwo);
+                    System.out.println("Proficiency level:(Fundamental, Novice, Intermediate, Advanced");
+                    tempLevelSkillTwo = keyboard.nextLine();
+                    sk.setLevelSkillTwo(tempLevelSkillTwo);
+                    System.out.println("Add another skill? (Y/N)"); //asking the user if they want to add another skill
+                    ansholder = keyboard.nextLine();
 
+                    if (ansholder.equalsIgnoreCase("Y")) {
+                        System.out.println("What is the name of your third skill:");
+                        tempSkillthree = keyboard.nextLine();
+                        sk.setSkillthree(tempSkillthree);
+                        System.out.println("Proficiency level:(Fundamental, Novice, Intermediate, Advanced");
+                        tempLevelSkillThree = keyboard.nextLine();
+                        sk.setLevelSkillThree(tempLevelSkillThree);
+                        tempname.setSkill(sk);
+                        skillSwitch = false;
+                    }
+
+                    else{
+                        tempname.setSkill(sk);
+                        skillSwitch = false;
+
+                    }
+
+
+                }
+                else{
+                    tempname.setSkill(sk);
+                    skillSwitch = false;
+                }
                 //END OF SKILLS
+            }
+            System.out.println("WE ARE DONE!");
+            //The function below displays the resume for the current user.
+            System.out.println();
+            System.out.println("-------------------------");
+            System.out.println(tempname.getName());
+            System.out.println(tempname.getEmail());
+            System.out.println(tempname.getEmail());
+            System.out.println(tempname.getEducation());
+            System.out.println(tempname.getJob());
+
+
+
+            System.out.println("-------------------------");
+            users.add(tempname);
+            System.out.println("Would you like to add another user?");
+            ansholder = keyboard.nextLine();
+            if (ansholder.equalsIgnoreCase("Y")){
 
             }
-
-            System.out.println("WE ARE DONE!");
-
-            //The function below displays the resume for the current user.
-            tempname.printPersonInfo();
-
-
+            else{
+                switchU =false;
+            }
 
         } //End of the main while loop to make a resume.
 
-
-
-
-
                 System.out.println("These are all the users stored in the system."+ users);
-
-
-
-
-
         }
     }
 
