@@ -240,21 +240,13 @@ public class Main {
             }
             System.out.println("WE ARE DONE!");
             //The function below displays the resume for the current user.
-
             tempname.printPersonInfo();
-//            System.out.println();
-//            System.out.println("-------------------------");
-//            System.out.println(tempname.getName());
-//            System.out.println(tempname.getEmail());
-//            System.out.println(tempname.getPhoneNumber());
-//            tempname.getEducation().printMyEducation();
-//            tempname.getEducation2().printMyEducation();
-//
-//
-//
-//            System.out.println("-------------------------");
+
+            //Adding user to the array list
             users.add(tempname);
-            System.out.println("Would you like to add another user?");
+
+
+            System.out.println("Would you like to add another user (Y/N)?");
             ansholder = keyboard.nextLine();
             if (ansholder.equalsIgnoreCase("Y")){
 
@@ -264,7 +256,7 @@ public class Main {
             }
 
         } //End of the main while loop to make a resume.
-
+                //Display all users in the system.
                 System.out.println("These are all the users stored in the system."+ users);
         }
     }
