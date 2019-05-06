@@ -106,7 +106,6 @@ public class Person {
 
 
     public void printPersonInfo(){
-        // TODO: this needs to be fixed
         System.out.println();
         System.out.println("-------------------------");
         System.out.println(getName());
@@ -161,7 +160,7 @@ public class Person {
 
          }
          else {
-             //TODO: Display skills from skills Class
+
              skill.printMySkills();
          }
 

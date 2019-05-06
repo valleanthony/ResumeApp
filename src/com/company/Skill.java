@@ -77,7 +77,7 @@ public class Skill {
         this.levelSkillThree = levelSkillThree;
     }
 
-    //TODO: Work on the Print Method for this class
+
 
     public void printMySkills(){
         System.out.println();
